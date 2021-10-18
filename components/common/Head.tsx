@@ -40,7 +40,7 @@ const HeadMeta: NextPage<HeadProps> = ({
       />
       <meta
         name="google-site-verification"
-        content="ooTKhgwWnYuscJPpaT81CAr858-Tu8q3SJdEL7sweUc"
+        content="cKAxxV957zun9sdnWBdxBHxaD78VO2PbbUo5id_ylLg"
       />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
