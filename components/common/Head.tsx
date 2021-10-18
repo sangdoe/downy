@@ -38,6 +38,10 @@ const HeadMeta: NextPage<HeadProps> = ({
         sizes="16x16"
         href="/favicon-16x16.png"
       />
+      <meta
+        name="google-site-verification"
+        content="ooTKhgwWnYuscJPpaT81CAr858-Tu8q3SJdEL7sweUc"
+      />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
       <meta name="apple-mobile-web-app-title" content="DOWNY" />
