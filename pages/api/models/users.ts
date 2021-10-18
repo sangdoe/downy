@@ -1,4 +1,4 @@
-import { User } from '../../../shared/types'
+import { User, GoogleUser } from '../../../shared/types'
 import db, { nestQuerySingle, sql } from "../../../shared/config";
 
 
@@ -6,6 +6,7 @@ type apiReturn = Promise<any[] | (readonly User[] | undefined)[]>;
 
 interface apiFunction {
   get: (id: number) => apiReturn;
+  insertGoogle: (p: GoogleUser) => apiReturn;
   getUser: (email: string, password: string) => apiReturn;
   getProfile: (id: number) => apiReturn;
   list: () => apiReturn;
@@ -109,6 +110,25 @@ const apiUser: apiFunction = {
         ${p.email},
         ${p.password},
         ${p.role}
+      )
+      on conflict (email) do nothing
+      returning id`;
+
+    return await db
+      .query(query)
+      .then((data) => [data.rows[0], undefined])
+      .catch((error) => [undefined, error]);
+  },
+
+  insertGoogle: async (p: GoogleUser) => {
+    const query = sql<User>`
+      INSERT INTO users (
+        name, email, photo, password
+      ) VALUES (
+        ${p.name},
+        ${p.email},
+        ${p.imageUrl},
+        ${'8x1sm3k4l51'}
       )
       on conflict (email) do nothing
       returning id`;

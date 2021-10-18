@@ -174,3 +174,13 @@ export interface FooterProps {
     imageUrl?: string;
     url?: string;
 }
+
+
+export type GoogleUser = {
+    googleId: string;
+    imageUrl: string;
+    email: string;
+    name: string;
+    givenName: string;
+    familyName: string;
+};
